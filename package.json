@@ -1,15 +1,17 @@
 {
-  "name": "bittorrent-dht",
+  "name": "@substrate-system/bittorrent-dht",
   "description": "Simple, robust, BitTorrent DHT implementation",
   "type": "module",
   "version": "11.0.9",
-  "author": {
-    "name": "WebTorrent LLC",
-    "email": "feross@webtorrent.io",
-    "url": "https://webtorrent.io"
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
   },
-  "bugs": {
-    "url": "https://github.com/webtorrent/bittorrent-dht/issues"
+  "scripts": {
+    "test": "standard && tape test/*.js",
+    "test-live": "tape test/live/*.js"
   },
   "dependencies": {
     "bencode": "^4.0.0",
@@ -22,7 +24,6 @@
     "record-cache": "^1.2.0"
   },
   "devDependencies": {
-    "@webtorrent/semantic-release-config": "1.0.10",
     "bittorrent-dht-sodium": "1.2.0",
     "ip": "1.1.9",
     "once": "1.4.0",
@@ -45,39 +46,19 @@
     "node": ">=12.20.0"
   },
   "license": "MIT",
-  "exports": {
-    "import": "./index.js"
-  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/webtorrent/bittorrent-dht.git"
+    "url": "git://github.com/substrate-system/bittorrent-dht.git"
   },
-  "scripts": {
-    "update-authors": "./tools/update-authors.sh",
-    "test": "standard && tape test/*.js",
-    "test-live": "tape test/live/*.js"
+  "author": {
+    "name": "WebTorrent LLC",
+    "email": "feross@webtorrent.io",
+    "url": "https://webtorrent.io"
   },
-  "funding": [
-    {
-      "type": "github",
-      "url": "https://github.com/sponsors/feross"
-    },
-    {
-      "type": "patreon",
-      "url": "https://www.patreon.com/feross"
-    },
-    {
-      "type": "consulting",
-      "url": "https://feross.org/support"
-    }
+  "contributors": [
+    "nichoth <nichoth@nichoth.com> (https://nichoth.com)"
   ],
-  "renovate": {
-    "extends": [
-      "github>webtorrent/renovate-config"
-    ],
-    "rangeStrategy": "bump"
-  },
-  "release": {
-    "extends": "@webtorrent/semantic-release-config"
+  "bugs": {
+    "url": "https://github.com/substrate-system/bittorrent-dht/issues"
   }
 }
